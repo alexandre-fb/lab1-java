@@ -1,10 +1,16 @@
 public class Teste {
   public static void main(String[] args) {
 
-    // ENDERECO ============
-    Endereco endereco1 = new Endereco("Rua 1", "Porto Alegre", "RS", "Brasil", "92990000", "numero 25", "Complemento A");
+    //PRODUTO ============
+    Produto produto1 = new Produto("Produto 1", 55.29);
 
-    System.out.println(endereco1);
+    System.out.println(produto1);
+ 
+
+    // // ENDERECO ============
+    // Endereco endereco1 = new Endereco("Rua 1", "Porto Alegre", "RS", "Brasil", "92990000", "numero 25", "Complemento A");
+
+    // System.out.println(endereco1);
 
     // // LOJAS ============
     // Loja loja1 = new Loja("Loja 1", 3, 155.01);
