@@ -1,11 +1,15 @@
 public class Teste {
   public static void main(String[] args) {
 
-    //PRODUTO ============
-    Produto produto1 = new Produto("Produto 1", 55.29);
+    //DATA ==========
+    Data data1 = new Data(29, 2, 2020);
+    System.out.println(data1);
 
-    System.out.println(produto1);
- 
+    // //PRODUTO ============
+    // Produto produto1 = new Produto("Produto 1", 55.29);
+
+    // System.out.println(produto1);
+
 
     // // ENDERECO ============
     // Endereco endereco1 = new Endereco("Rua 1", "Porto Alegre", "RS", "Brasil", "92990000", "numero 25", "Complemento A");
