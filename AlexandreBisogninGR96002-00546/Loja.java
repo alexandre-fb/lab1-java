@@ -32,13 +32,13 @@ public class Loja {
     return this.salarioBaseFuncionario * this.quantidadeFuncionarios;
   }
 
-  public String tamanhoDaLoja() {
+  public char tamanhoDaLoja() {
     if (this.quantidadeFuncionarios < 10) {
-      return "P";
+      return 'P';
     } else if (this.quantidadeFuncionarios >= 10 && this.quantidadeFuncionarios <= 30) {
-      return "M";
+      return 'M';
     } else {
-      return "G";
+      return 'G';
     }
   }
 
