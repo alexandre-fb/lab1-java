@@ -2,25 +2,35 @@ public class Loja {
   private String nome;
   private int quantidadeFuncionarios;
   private double salarioBaseFuncionario;
+  private Endereco endereco;
+  private Data dataFundacao;
 
   // construtores
-  public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario) {
+  public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao) {
     this.nome = nome;
     this.quantidadeFuncionarios = quantidadeFuncionarios;
     this.salarioBaseFuncionario = salarioBaseFuncionario;
+    this.endereco = endereco;
+    this.dataFundacao = dataFundacao;
+    
   }
 
-  public Loja(String nome, int quantidadeFuncionarios) {
+  public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataFundacao) {
     this.nome = nome;
     this.quantidadeFuncionarios = quantidadeFuncionarios;
     this.salarioBaseFuncionario = -1;
+    this.endereco = endereco;
+    this.dataFundacao = dataFundacao;
   }
 
   // toString
   @Override
   public String toString() {
-    return "Loja: " + this.nome + ", quantidade de funcionários: " + this.quantidadeFuncionarios
-        + ", salario base funcionario: " + this.salarioBaseFuncionario;
+    return "Loja: " + this.nome + "\n" + 
+           "Quantidade de funcionários: " + this.quantidadeFuncionarios + "\n" + 
+           "Salario base funcionario: " + this.salarioBaseFuncionario + "\n" + 
+           this.endereco + "\n" + 
+           "Fundado na " + this.dataFundacao;
   }
 
   // metodos da regra de negocio
@@ -55,6 +65,14 @@ public class Loja {
     return this.quantidadeFuncionarios;
   }
 
+  public Endereco getEndereco() {
+    return this.endereco;
+  }
+
+  public Data getDataFundacao() {
+    return this.dataFundacao;
+  }
+
   public void setQuantidadeFuncionarios(int quantidadeFuncionarios) {
     this.quantidadeFuncionarios = quantidadeFuncionarios;
   }
@@ -67,4 +85,11 @@ public class Loja {
     this.salarioBaseFuncionario = salarioBaseFuncionario;
   }
 
+  public void setEndereco(Endereco endereco) {
+    this.endereco = endereco;
+  }
+
+  public void setDataFundacao(Data dataFundacao) {
+    this.dataFundacao = dataFundacao;
+  }
 }
