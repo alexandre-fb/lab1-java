@@ -206,7 +206,7 @@ public class ValidadorEtapa4 {
 		boolean rem2 = loja2.removeProduto("Pipoc caramelo");
 		System.out.println(!rem2 ? "[OK] Método Loja.removeProduto() - não encontrou produto corretamente" : "[NOK] Método Loja.removeProduto() - removeu produto que não existe");
 
-		//======= Verificação da classe Cosmetico
+		//// Verificação da classe Cosmetico
 		//Criação da instância
 		Cosmetico lojaCosmetico = new Cosmetico("Loja Cosmético", 10, 2100, e1, d1, 20, 10);
 		System.out.println("\n[OK] Classe Cosmetico identificada");
@@ -215,14 +215,14 @@ public class ValidadorEtapa4 {
 		lojaCosmetico.setTaxaComercializacao(50);
 		System.out.println("[OK] Método Cosmetico.setTaxaComercializacao()");
 		
-		///public double getTaxaComercializacao()
+		//public double getTaxaComercializacao()
 		System.out.println(lojaCosmetico.getTaxaComercializacao() == 50 ? "[OK] Método Cosmetico.getTaxaComercializacao()" : "[NOK] Método Cosmetico.getTaxaComercializacao()");
 		
 		//public String toString()
 		System.out.println(lojaCosmetico.toString() != null ? "[OK] Método Cosmetico.toString()" : "[NOK] Método Cosmetico.toString()");
 
 		
-		///Verificação da classe Vestuario
+		//// Verificação da classe Vestuario
 		//Criação da instância
 		Vestuario lojaVestuario = new Vestuario("Loja Vestuário", 10, 2100, e1, d1, false, 10);
 		System.out.println("\n[OK] Classe Vestuario identificada");
@@ -237,7 +237,8 @@ public class ValidadorEtapa4 {
 		//public String toString()
 		System.out.println(lojaVestuario.toString() !=  null ? "[OK] Método Vestuario.toString()" : "[NOK] Método Vestuario.toString()");
 		
-		/// Verificação da classe Bijuteria
+		
+		//// Verificação da classe Bijuteria
 		//Criação da instância
 		Bijuteria lojaBijuteria = new Bijuteria("Loja Bijuteria", 10, 2100, e1, d1, 5000, 10);
 		System.out.println("\n[OK] Classe Bijuteria identificada");
@@ -253,7 +254,7 @@ public class ValidadorEtapa4 {
 		System.out.println(lojaBijuteria.toString() != null ? "[OK] Método Bijuteria.toString()" : "[NOK] Método Bijuteria.toString()");
 		
 		
-		///Verificação da classe Alimentacao
+		//// Verificação da classe Alimentacao
 		//Criação da instância
 		Alimentacao lojaAlimentacao = new Alimentacao("Loja Alimentação", 10, 2100, e1, d1, d1, 10);
 		System.out.println("\n[OK] Classe Alimentacao identificada");
@@ -268,7 +269,8 @@ public class ValidadorEtapa4 {
 		//public String toString()
 		System.out.println(lojaAlimentacao.toString() != null ? "[OK] Método Alimentacao.toString()" : "[NOK] Método Alimentacao.toString()");
 
-		///Verificação da classe Informatica
+		
+		//// Verificação da classe Informatica
 		//Criação da instância
 		Informatica lojaInformatica = new Informatica("Loja Informática", 10, 2100, e1, d1, 300, 10);
 		System.out.println("\n[OK] Classe Informatica identificada");
@@ -284,57 +286,57 @@ public class ValidadorEtapa4 {
 		System.out.println(lojaInformatica.toString() != null ? "[OK] Método Informatica.toString()" : "[NOK] Método Informatica.toString()");
 		
 		
-		//======= Verificação da classe Shopping
-		// Shopping shopping = new Shopping("Shopping Real", e1, 2);
-		// System.out.println("\n[OK] Classe Shopping idetificada");
+		//// Verificação da classe Shopping
+		Shopping shopping = new Shopping("Shopping Real", e1, 2);
+		System.out.println("\n[OK] Classe Shopping idetificada");
 
-		//=======public void setNome(String nome)
-		// shopping.setNome("Park Shopping");
-		// System.out.println("[OK] Método Shopping.setNome()");
+		//public void setNome(String nome)
+		shopping.setNome("Park Shopping");
+		System.out.println("[OK] Método Shopping.setNome()");
 
-		//=======public String getNome()
-		// System.out.println(shopping.getNome().equals("Park Shopping") ? "[OK] Método Shopping.getNome()" : "[NOK] Método Shopping.getNome()");
+		//public String getNome()
+		System.out.println(shopping.getNome().equals("Park Shopping") ? "[OK] Método Shopping.getNome()" : "[NOK] Método Shopping.getNome()");
 
-		//=======public void setEndereco(Endereco endereco)
-		// Endereco e2 = new Endereco("Rua das Flores", "Porto Alegre","RS", "Brasil", "91000-100", "15", null);
-		// shopping.setEndereco(e2);
-		// System.out.println("[OK] Método Shopping.setEndereco()");
+		//public void setEndereco(Endereco endereco)
+		Endereco e2 = new Endereco("Rua das Flores", "Porto Alegre","RS", "Brasil", "91000-100", "15", null);
+		shopping.setEndereco(e2);
+		System.out.println("[OK] Método Shopping.setEndereco()");
 
-		//=======public Endereco getEndereco()
-		// System.out.println(shopping.getEndereco().getNumero().equals("15") ? "[OK] Método Shopping.getEndereco()" : "[NOK] Método Shopping.getEndereco()");
+		//public Endereco getEndereco()
+		System.out.println(shopping.getEndereco().getNumero().equals("15") ? "[OK] Método Shopping.getEndereco()" : "[NOK] Método Shopping.getEndereco()");
 
-		//=======public Loja[] getLojas()
-		// System.out.println(shopping.getLojas().length == 2 ? "[OK] Método Shopping.getLojas()" : "[NOK] Método Shopping.getLojas()");
+		//public Loja[] getLojas()
+		System.out.println(shopping.getLojas().length == 2 ? "[OK] Método Shopping.getLojas()" : "[NOK] Método Shopping.getLojas()");
 
-		// //=======public boolean insereLoja(Loja loja)
-		// boolean criaLoja1 = shopping.insereLoja(lojaInformatica);
-		// System.out.println(criaLoja1 ? "[OK] Método Shopping.insereLoja() - inclusão de uma loja" : "[NOK] Método Shopping.insereLoja() - não deixou inserir a primeira loja");
+		//public boolean insereLoja(Loja loja)
+		boolean criaLoja1 = shopping.insereLoja(lojaInformatica);
+		System.out.println(criaLoja1 ? "[OK] Método Shopping.insereLoja() - inclusão de uma loja" : "[NOK] Método Shopping.insereLoja() - não deixou inserir a primeira loja");
 
-		// System.out.println(shopping.getLojas()[1] == null ? "[OK] Método Shopping.insereLoja() - restante do array permanece vazio" : "[NOK] Método Shopping.insereLoja() - ao incluir uma loja, mexeu nas demais posições do array");
+		System.out.println(shopping.getLojas()[1] == null ? "[OK] Método Shopping.insereLoja() - restante do array permanece vazio" : "[NOK] Método Shopping.insereLoja() - ao incluir uma loja, mexeu nas demais posições do array");
 		
-		// boolean criaLoja2 = shopping.insereLoja(lojaBijuteria);
-		// System.out.println((criaLoja1 && criaLoja2) ? "[OK] Método Shopping.insereLoja() - inclusão de duas lojas" : "[NOK] Método Shopping.insereLoja() - não deixou incluir duas lojas");
+		boolean criaLoja2 = shopping.insereLoja(lojaBijuteria);
+		System.out.println((criaLoja1 && criaLoja2) ? "[OK] Método Shopping.insereLoja() - inclusão de duas lojas" : "[NOK] Método Shopping.insereLoja() - não deixou incluir duas lojas");
 		
-		// boolean criaLoja3 = shopping.insereLoja(lojaCosmetico);
-		// System.out.println(!criaLoja3 ? "[OK] Método Shopping.insereLoja() - não permitiu inclusão de item quando array cheio" : "[NOK] Método Shopping.insereLoja() - permitiu inclusão de item quando array cheio");
+		boolean criaLoja3 = shopping.insereLoja(lojaCosmetico);
+		System.out.println(!criaLoja3 ? "[OK] Método Shopping.insereLoja() - não permitiu inclusão de item quando array cheio" : "[NOK] Método Shopping.insereLoja() - permitiu inclusão de item quando array cheio");
 
-		//=======public int quantidadeLojasPorTipo(String tipoLoja)
-		// int total = shopping.quantidadeLojasPorTipo("Bijuteria");
-		// System.out.println(total == 1 ? "[OK] Método Shopping.quantidadeLojasPorTipo() - localizou uma loja" : "[NOK] Método Shopping.quantidadeLojasPorTipo() - não conseguiu localizar uma loja");
+		//public int quantidadeLojasPorTipo(String tipoLoja)
+		int total = shopping.quantidadeLojasPorTipo("Bijuteria");
+		System.out.println(total == 1 ? "[OK] Método Shopping.quantidadeLojasPorTipo() - localizou uma loja" : "[NOK] Método Shopping.quantidadeLojasPorTipo() - não conseguiu localizar uma loja");
 
-		//=======public boolean removeLoja(String nomeLoja)
-		// boolean removeLoja1 = shopping.removeLoja("Loja Bijuteria");
-		// System.out.println(removeLoja1 ? "[OK] Método Shopping.removeLoja() - removeu corretamente uma loja" : "[NOK] Método Shopping.removeLoja() - não conseguiu remover a loja");
+		//public boolean removeLoja(String nomeLoja)
+		boolean removeLoja1 = shopping.removeLoja("Loja Bijuteria");
+		System.out.println(removeLoja1 ? "[OK] Método Shopping.removeLoja() - removeu corretamente uma loja" : "[NOK] Método Shopping.removeLoja() - não conseguiu remover a loja");
 
-		// boolean removeLoja2 = shopping.removeLoja("Loja Bijuteria");
-		// System.out.println(!removeLoja2 ? "[OK] Método Shopping.removeLoja() - loja não existe para remover" : "[NOK] Método Shopping.removeLoja() - removeu uma loja que não existe");
-//=======
-		// lojaInformatica.setSeguroEletronicos(800);
-		// shopping.insereLoja(lojaInformatica);
-		// total = shopping.quantidadeLojasPorTipo("Informática");
-		// System.out.println(total == 2 ? "[OK] Método Shopping.quantidadeLojasPorTipo() - localizou duas lojas" : "[NOK] Método Shopping.quantidadeLojasPorTipo() - não conseguiu localizar as lojas");
+		boolean removeLoja2 = shopping.removeLoja("Loja Bijuteria");
+		System.out.println(!removeLoja2 ? "[OK] Método Shopping.removeLoja() - loja não existe para remover" : "[NOK] Método Shopping.removeLoja() - removeu uma loja que não existe");
 
-		//=======public Informatica lojaSeguroMaisCaro()
+		lojaInformatica.setSeguroEletronicos(800);
+		shopping.insereLoja(lojaInformatica);
+		total = shopping.quantidadeLojasPorTipo("Informática");
+		System.out.println(total == 2 ? "[OK] Método Shopping.quantidadeLojasPorTipo() - localizou duas lojas" : "[NOK] Método Shopping.quantidadeLojasPorTipo() - não conseguiu localizar as lojas");
+
+		//public Informatica lojaSeguroMaisCaro()
 		// Informatica maisCaro = shopping.lojaSeguroMaisCaro();
 		// System.out.println(maisCaro.getSeguroEletronicos() == 800 ? "[OK] Método Shopping.lojaSeguroMaisCaro()" : "[NOK] Método Shopping.lojaSeguroMaisCaro");
 

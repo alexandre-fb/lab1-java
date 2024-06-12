@@ -7,7 +7,8 @@ public class Loja {
   private Produto estoqueProdutos[];
 
   // construtores
-  public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataFundacao, int quantidadeEstoque) {
+  public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco,
+      Data dataFundacao, int quantidadeEstoque) {
     this.nome = nome;
     this.quantidadeFuncionarios = quantidadeFuncionarios;
     this.salarioBaseFuncionario = salarioBaseFuncionario;
@@ -64,11 +65,9 @@ public class Loja {
 
   public boolean removeProduto(String nomeProduto) {
     for (int i = 0; i < this.estoqueProdutos.length; i++) {
-      if (this.estoqueProdutos[i] != null) {
-        if (this.estoqueProdutos[i].getNome() == nomeProduto) {
-          this.estoqueProdutos[i] = null;
-          return true;
-        }
+      if (this.estoqueProdutos[i] != null && this.estoqueProdutos[i].getNome().equalsIgnoreCase(nomeProduto)) {
+        this.estoqueProdutos[i] = null;
+        return true;
       }
     }
 
