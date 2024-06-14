@@ -32,6 +32,7 @@ public class Shopping {
   }
 
   public boolean removeLoja(String nomeLoja) {
+    System.out.println("nomeLoja" + nomeLoja);
     for (int i = 0; i < this.lojas.length; i++) {
 
       if (this.lojas[i] != null && this.lojas[i].getNome().equalsIgnoreCase(nomeLoja)) {
@@ -49,73 +50,80 @@ public class Shopping {
     }
   }
 
+  public String normalize(String texto) {
+    return Normalizer.normalize(texto, Normalizer.Form.NFD)
+        .replaceAll("\\p{M}", "")
+        .toLowerCase();
+  }
+
   public int quantidadeLojasPorTipo(String tipoLoja) {
     int totalLojas = 0;
-    String tipoLojaNormalized = Normalizer.normalize(tipoLoja, Normalizer.Form.NFC);
 
-      switch (tipoLojaNormalized) {
-        case "Cosmético":
-          for (int i = 0; i < this.lojas.length; i++) {
-            if(this.lojas[i] instanceof Cosmetico) {
-              totalLojas++;
-            }
+    System.out.println("tipoLoja" + normalize(tipoLoja));
+    switch (normalize(tipoLoja)) {
+      case "cosmetico":
+        for (int i = 0; i < this.lojas.length; i++) {
+          if (this.lojas[i] instanceof Cosmetico) {
+            totalLojas++;
           }
-          break;
-        case "Vestuário":
-          for (int i = 0; i < this.lojas.length; i++) {
-            if(this.lojas[i] instanceof Vestuario) {
-              totalLojas++;
-            }
+        }
+        break;
+      case "vestuario":
+        for (int i = 0; i < this.lojas.length; i++) {
+          if (this.lojas[i] instanceof Vestuario) {
+            totalLojas++;
           }
-          break;
-        case "Bijuteria":
-          for (int i = 0; i < this.lojas.length; i++) {
-            if(this.lojas[i] instanceof Bijuteria) {
-              totalLojas++;
-            }
+        }
+        break;
+      case "bijuteria":
+        for (int i = 0; i < this.lojas.length; i++) {
+          if (this.lojas[i] instanceof Bijuteria) {
+            totalLojas++;
           }
-          break;
-        case "Alimentação":
-          for (int i = 0; i < this.lojas.length; i++) {
-            if(this.lojas[i] instanceof Alimentacao ) {
-              totalLojas++;
-            }
+        }
+        break;
+      case "alimentacao":
+        for (int i = 0; i < this.lojas.length; i++) {
+          if (this.lojas[i] instanceof Alimentacao) {
+            totalLojas++;
           }
-          break;
-        case "Informática":
-          for (int i = 0; i < this.lojas.length; i++) {
-            if(this.lojas[i] instanceof Informatica ) {
-              totalLojas++;
-            }
+        }
+        break;
+      case "informatica":
+        for (int i = 0; i < this.lojas.length; i++) {
+          if (this.lojas[i] instanceof Informatica) {
+            totalLojas++;
           }
-          break;
-        default:
-          break;
-      }
+        }
+        break;
+      default:
+        break;
+    }
 
-      // if(tipoLojaNormalized.equalsIgnoreCase("Bijuteria")) {
-      //   if(this.lojas[i] instanceof Bijuteria) {
-      //     totalLojas++;
-      //   }
-      // }
-      // if(tipoLojaNormalized.equalsIgnoreCase("Informática")) {
-      //   if(this.lojas[i] instanceof Informatica) {
-      //     totalLojas++;
-      //   }
-      // }
-
-      // if(tipoLoja.equalsIgnoreCase("Bijuteria")) {
-      //   if(this.lojas[i] instanceof Bijuteria) {
-      //     totalLojas++;
-      //   }
-      // }
-    
-
-    if(totalLojas > 0) {
+    if (totalLojas > 0) {
       return totalLojas;
     }
 
     return -1;
+  }
+
+  public Informatica lojaSeguroMaisCaro() {
+    Informatica lojaSeguroMaisCaro = null;
+    double maiorValor = 0;
+
+    for (int i = 0; i < this.lojas.length; i++) {
+      if (this.lojas[i] instanceof Informatica) {
+
+        Informatica lojaAtual = (Informatica) this.lojas[i];
+
+        if(lojaAtual.getSeguroEletronicos() > maiorValor) {
+          maiorValor = lojaAtual.getSeguroEletronicos();
+          lojaSeguroMaisCaro = lojaAtual;
+        }
+      }
+    }
+
+    return lojaSeguroMaisCaro;
   }
 
   // metodos de acesso

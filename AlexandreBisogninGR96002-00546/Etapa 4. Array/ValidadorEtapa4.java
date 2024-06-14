@@ -336,9 +336,8 @@ public class ValidadorEtapa4 {
 		total = shopping.quantidadeLojasPorTipo("Informática");
 		System.out.println(total == 2 ? "[OK] Método Shopping.quantidadeLojasPorTipo() - localizou duas lojas" : "[NOK] Método Shopping.quantidadeLojasPorTipo() - não conseguiu localizar as lojas");
 
-		//public Informatica lojaSeguroMaisCaro()
-		// Informatica maisCaro = shopping.lojaSeguroMaisCaro();
-		// System.out.println(maisCaro.getSeguroEletronicos() == 800 ? "[OK] Método Shopping.lojaSeguroMaisCaro()" : "[NOK] Método Shopping.lojaSeguroMaisCaro");
-
+		// public Informatica lojaSeguroMaisCaro()
+		Informatica maisCaro = shopping.lojaSeguroMaisCaro();
+		System.out.println(maisCaro.getSeguroEletronicos() == 800 ? "[OK] Método Shopping.lojaSeguroMaisCaro()" : "[NOK] Método Shopping.lojaSeguroMaisCaro");
 	}
 }
