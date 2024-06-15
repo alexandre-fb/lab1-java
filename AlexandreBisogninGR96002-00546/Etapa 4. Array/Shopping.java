@@ -15,8 +15,8 @@ public class Shopping {
   @Override
   public String toString() {
     return "Nome: " + this.nome + "\n" +
-        "endereço: " + this.endereco + "\n" +
-        "lojas: " + this.lojas;
+           "endereço: " + this.endereco + "\n" +
+           "lojas: " + this.lojas;
   }
 
   // regras de negocio
@@ -59,7 +59,6 @@ public class Shopping {
   public int quantidadeLojasPorTipo(String tipoLoja) {
     int totalLojas = 0;
 
-    System.out.println("tipoLoja" + normalize(tipoLoja));
     switch (normalize(tipoLoja)) {
       case "cosmetico":
         for (int i = 0; i < this.lojas.length; i++) {
@@ -116,7 +115,7 @@ public class Shopping {
 
         Informatica lojaAtual = (Informatica) this.lojas[i];
 
-        if(lojaAtual.getSeguroEletronicos() > maiorValor) {
+        if (lojaAtual.getSeguroEletronicos() > maiorValor) {
           maiorValor = lojaAtual.getSeguroEletronicos();
           lojaSeguroMaisCaro = lojaAtual;
         }
